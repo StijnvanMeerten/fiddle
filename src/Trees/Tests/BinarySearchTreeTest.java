@@ -1,6 +1,8 @@
 package Trees.Tests;
 
 import Trees.BinarySearchTree;
+import Trees.BinarySearchTreePrinter;
+import Trees.BinaryTree;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -87,10 +89,16 @@ public class BinarySearchTreeTest {
     @Test
     public void tryDeletingNodeWithSeveralLeftAndRightChildren(){
         tree.deleteItem(6);
+        BinarySearchTreePrinter.printNode(tree.getRoot());
         Assert.assertEquals(tree.getNode(10).getLeftChild(), tree.getNode(7));
         Assert.assertEquals(tree.getNode(7).getLeftChild(), tree.getNode(3));
         Assert.assertEquals(tree.getNode(7).getRightChild(), tree.getNode(9));
         Assert.assertEquals(tree.getNode(9).getLeftChild(), tree.getNode(8));
         Assert.assertNull(tree.getNode(6));
+    }
+
+    @Test
+    public void printTree(){
+        BinarySearchTreePrinter.printNode(tree.getRoot());
     }
 }

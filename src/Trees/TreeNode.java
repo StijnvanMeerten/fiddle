@@ -5,10 +5,8 @@ public class TreeNode<T> {
     private TreeNode next;
     private TreeNode child;
 
-    public TreeNode(T data, TreeNode next, TreeNode child){
+    public TreeNode(T data){
         this.data = data;
-        this.next = next;
-        this.child = child;
     }
 
     public T getData(){

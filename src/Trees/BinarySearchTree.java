@@ -86,10 +86,11 @@ public class BinarySearchTree {
             BinarySearchTreeNode tmpCopy = getNode(tmp); //This variable exists solely to prevent having to call getNode 2 to 3 times.
 
             if(tmpCopy.getRightChild() != null || tmpCopy.getLeftChild() != null){
-                deleteItem(tmpCopy.getData());
+                deleteItem(tmp);
             }
             if(item < findParent(root, item).getData()) {
                 findParent(root, item).getLeftChild().setData(tmp);
+                getNode(tmpCopy.getData()).setRightChild(tmpCopy.getRightChild());
             } else{
                 findParent(root, item).getRightChild().setData(tmp);
             }
